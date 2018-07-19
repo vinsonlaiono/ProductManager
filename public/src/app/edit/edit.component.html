@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="form-control">
+    <!-- <h1 class="">{{ product.title }}</h1> -->
+    <div class="row">
+      <!-- start of for loop -->
+      <div class="col-2">
+        <div class=" mx-2">
+          <!-- {{ errors | json}} -->
+          <img src="{{product.image_url}}" alt="">
+          <p style="color: red;" *ngIf="errors.title">{{errors.title.message}}</p>
+          <input class="form-control mb-1" type="text" name="product.title" [(ngModel)]="product.title">
+          <p style="color: red;" *ngIf="errors.price">{{errors.price.message}}</p>
+          <input class="form-control mb-1" type="text" name="product.price" [(ngModel)]="product.price">
+          <input class="form-control mb-1" type="text" name="product.image_url" [(ngModel)]="product.image_url">
+
+          <button (click)=updateProduct() class="btn btn-primary">UPDATE</button>
+          <button class="btn btn-success" (click)="deleteOneProduct(product._id)">DELETE</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

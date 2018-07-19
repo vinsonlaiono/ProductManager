@@ -1,0 +1,17 @@
+<div class="form-control mx-auto" style="width: 300px;">
+
+  <h3>Create a new product</h3>
+
+  <form (submit)="createNewProduct()">
+    <p style="color: red" *ngIf="errors.title">{{ errors.title.message }}</p>
+    <h4>Title</h4>
+    <input type="text" class="form-control" name="newProduct.title" [(ngModel)]="newProduct.title">
+    <p style="color: red" *ngIf ="errors.price">{{ errors.price.message }}</p>
+    <h4>Price</h4>
+    <input type="text" class="form-control" name="newProduct.price" [(ngModel)]="newProduct.price">
+    <h4>Image URL</h4>
+    <input type="text" class="form-control" name="newProduct.image_url" [(ngModel)]="newProduct.image_url">
+    <button type="submit" class="btn btn-primary my-1" [routerLink]="['products']">CREATE</button>
+    <a class="btn btn-danger" [routerLink]="['/products']">CANCEL</a>
+  </form>
+</div>
